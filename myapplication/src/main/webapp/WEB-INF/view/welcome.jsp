@@ -167,6 +167,9 @@ to {
 	<button onclick="document.getElementById('id01').style.display='block'"
 		style="width: auto;">Login</button>
 
+	<button onclick="document.getElementById('id02').style.display='block'"
+		style="width: auto;">Excel Upload</button>
+
 	<div id="id01" class="modal">
 
 		<form class="modal-content animate" action="validateUser"
@@ -186,6 +189,26 @@ to {
 			<div class="container" style="background-color: #f1f1f1">
 				<button type="button"
 					onclick="document.getElementById('id01').style.display='none'"
+					class="cancelbtn">Cancel</button>
+
+			</div>
+		</form>
+	</div>
+	<div id="id02" class="modal">
+
+		<form class="modal-content animate" action="uploadSheet"
+			method="post" style="max-width: 50%" enctype="multipart/form-data">
+
+
+			<div class="container">
+				Select Excel to upload: <input type="file" name="fileToUpload"
+					id="fileToUpload">
+			</div>
+			<div class="container" style="background-color: #f1f1f1">
+
+				<button type="submit" class="cancelbtn" style="background-color: blue;">Upload Excel</button>
+				<button type="button"
+					onclick="document.getElementById('id02').style.display='none'"
 					class="cancelbtn">Cancel</button>
 
 			</div>

@@ -16,9 +16,13 @@ public class LoginServicesImpl implements LoginServices {
 	LoginDao loginDao;
 
 	@Override
-	public LoginModal valudateLogin(LoginModal loginModel) {
-		// TODO Auto-generated method stub
+	public LoginModal validateLogin(LoginModal loginModel) {
 		return loginDao.validateLoginUser(loginModel);
+	}
+
+	@Override
+	public LoginModal addNewUser(LoginModal loginModel) {
+		return loginDao.addLoginUser(loginModel);
 	}
 
 }

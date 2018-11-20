@@ -46,4 +46,22 @@ public class LoginDaoImpl implements LoginDao {
 		return _loginModel;
 	}
 
+	@Override
+	public LoginModal addLoginUser(LoginModal loginModel) {
+		Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		try {
+			session.beginTransaction();
+			session.saveOrUpdate(loginModel);
+			session.flush();
+			session.clear();
+			session.getTransaction().commit();
+			return loginModel;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+	}
+
 }
